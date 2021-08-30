@@ -1,0 +1,13 @@
+/* stylelint-disable */
+
+.book-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+}
+
+.book-item div {
+  margin: 10px;
+}
+/*# sourceMappingURL=App.css.map */
