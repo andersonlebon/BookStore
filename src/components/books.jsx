@@ -10,11 +10,23 @@ class Books extends Component {
         { id: 2, title: 'book2' },
         { id: 3, title: 'book3' },
       ],
+      inputBook: '',
     };
   }
 
+  handleChange = ({ currentTarget }) => {
+    this.setState({ inputBook: currentTarget.value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { inputBook, books } = this.state;
+    books.push({ id: books.length + 1, title: inputBook });
+    this.setState({ books });
+  };
+
   render() {
-    const { books } = this.state;
+    const { books, inputBook } = this.state;
     return (
       <section>
         <ul>
@@ -22,8 +34,8 @@ class Books extends Component {
             <Book key={book.id} bookTitle={book.title} />
           ))}
         </ul>
-        <form>
-          <input type="text" />
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} value={inputBook} type="text" />
           <button type="submit">Add book</button>
         </form>
       </section>
