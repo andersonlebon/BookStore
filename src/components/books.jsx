@@ -25,13 +25,19 @@ class Books extends Component {
     this.setState({ books });
   };
 
+  handleDelete = (id) => {
+    const { books } = this.state;
+    const booksDel = books.filter((book) => book.id !== id);
+    this.setState({ books: booksDel });
+  };
+
   render() {
     const { books, inputBook } = this.state;
     return (
       <section>
         <ul>
           {books.map((book) => (
-            <Book key={book.id} bookTitle={book.title} />
+            <Book key={book.id} onDelete={this.handleDelete} books={book} />
           ))}
         </ul>
         <form onSubmit={this.handleSubmit}>

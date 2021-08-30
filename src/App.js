@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Books from './components/books';
 import Categories from './components/categories';
 import Header from './components/header';
+import './sass/App.css';
 
 function App() {
   return (
