@@ -7,7 +7,11 @@ class Categories extends Component {
   }
 
   render() {
-    return <h2>Under construction</h2>;
+    return (
+      <section>
+        <h2>Under construction</h2>
+      </section>
+    );
   }
 }
 

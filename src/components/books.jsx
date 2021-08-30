@@ -17,9 +17,15 @@ class Books extends Component {
     const { books } = this.state;
     return (
       <section>
-        {books.map((book) => (
-          <Book key={book.id} bookTitle={book.title} />
-        ))}
+        <ul>
+          {books.map((book) => (
+            <Book key={book.id} bookTitle={book.title} />
+          ))}
+        </ul>
+        <form>
+          <input type="text" />
+          <button type="submit">Add book</button>
+        </form>
       </section>
     );
   }
