@@ -11,9 +11,9 @@ const Books = () => {
     author: '',
   });
 
-  const handleChange = ({ currentTarget }) => {
+  const handleChange = ({ currentTarget: input }) => {
     const stateCloned = state;
-    stateCloned[currentTarget.name] = currentTarget.value;
+    stateCloned[input.name] = input.value;
     setState({ ...state, ...stateCloned });
   };
 
@@ -27,7 +27,7 @@ const Books = () => {
     dispatch(removeBook({ id }));
   };
 
-  const { inputBook } = state;
+  const { title, author } = state;
   return (
     <section>
       <ul>
@@ -36,7 +36,18 @@ const Books = () => {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <input name="title" onChange={handleChange} value={inputBook} type="text" />
+        <input
+          name="title"
+          onChange={handleChange}
+          value={title}
+          type="text"
+        />
+        <input
+          name="author"
+          onChange={handleChange}
+          value={author}
+          type="text"
+        />
         <button type="submit">Add book</button>
       </form>
     </section>
