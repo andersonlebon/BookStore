@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import store from '../redux/configureStore';
 
 class Header extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log(store);
     return (
       <header>
         <nav>
