@@ -8,11 +8,11 @@ const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
       bookId += 1;
-      const { title, author } = action.payload;
+      const { title, auther } = action.payload;
       const newBook = {
         id: bookId,
         title,
-        author,
+        auther,
       };
       return [...state, newBook];
     }

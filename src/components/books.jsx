@@ -8,7 +8,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
-    author: '',
+    auther: '',
   });
 
   const handleChange = ({ currentTarget: input }) => {
@@ -19,20 +19,20 @@ const Books = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { title, author } = state;
-    dispatch(addBook({ title, author }));
+    const { title, auther } = state;
+    dispatch(addBook({ title, auther }));
   };
 
   const handleDelete = (id) => {
     dispatch(removeBook({ id }));
   };
 
-  const { title, author } = state;
+  const { title, auther } = state;
   return (
     <section>
       <ul>
         {books.map((book) => (
-          <Book key={book.id} onDelete={handleDelete} books={book} />
+          <Book key={book.id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
@@ -43,9 +43,9 @@ const Books = () => {
           type="text"
         />
         <input
-          name="author"
+          name="auther"
           onChange={handleChange}
-          value={author}
+          value={auther}
           type="text"
         />
         <button type="submit">Add book</button>
