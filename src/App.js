@@ -11,7 +11,7 @@ function App() {
       <main>
         <Header />
         <Switch>
-          <Route path="/books" component={Books} />
+          <Route path="/books" render={() => <Books />} />
           <Route path="/categories" component={Categories} />
         </Switch>
       </main>
