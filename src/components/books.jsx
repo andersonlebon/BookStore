@@ -1,52 +1,48 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBook, removeBook } from '../redux/books/books';
 import Book from './common/book';
+import Input from './common/input';
 
-class Books extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: [
-        { id: 1, title: 'book1' },
-        { id: 2, title: 'book2' },
-        { id: 3, title: 'book3' },
-      ],
-      inputBook: '',
-    };
-  }
+const Books = () => {
+  const { booksReducer: books } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [state, setState] = useState({
+    title: '',
+    auther: '',
+  });
 
-  handleChange = ({ currentTarget }) => {
-    this.setState({ inputBook: currentTarget.value });
+  const handleChange = ({ currentTarget: input }) => {
+    const stateCloned = state;
+    stateCloned[input.name] = input.value;
+    setState({ ...state, ...stateCloned });
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const { inputBook, books } = this.state;
-    books.push({ id: books.length + 1, title: inputBook });
-    this.setState({ books });
+    const { title, auther } = state;
+    dispatch(addBook({ title, auther }));
   };
 
-  handleDelete = (id) => {
-    const { books } = this.state;
-    const booksDel = books.filter((book) => book.id !== id);
-    this.setState({ books: booksDel });
+  const handleDelete = (id) => {
+    dispatch(removeBook({ id }));
   };
 
-  render() {
-    const { books, inputBook } = this.state;
-    return (
-      <section>
-        <ul>
-          {books.map((book) => (
-            <Book key={book.id} onDelete={this.handleDelete} books={book} />
-          ))}
-        </ul>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={inputBook} type="text" />
-          <button type="submit">Add book</button>
-        </form>
-      </section>
-    );
-  }
-}
+  const { title, auther } = state;
+  return (
+    <section>
+      <ul>
+        {books.map((book) => (
+          <Book key={book.id} onDelete={handleDelete} book={book} />
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <Input name="title" value={title} onChange={handleChange} />
+        <Input name="auther" value={auther} onChange={handleChange} />
+        <button type="submit">Add book</button>
+      </form>
+    </section>
+  );
+};
 
 export default Books;
