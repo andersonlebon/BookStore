@@ -7,17 +7,20 @@ const Books = () => {
   const { booksReducer: books } = useSelector((state) => state);
   const dispatch = useDispatch();
   const [state, setState] = useState({
-    inputBook: '',
+    title: '',
+    author: '',
   });
 
   const handleChange = ({ currentTarget }) => {
-    setState({ ...state, inputBook: currentTarget.value });
+    const stateCloned = state;
+    stateCloned[currentTarget.name] = currentTarget.value;
+    setState({ ...state, ...stateCloned });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { inputBook } = state;
-    dispatch(addBook({ title: inputBook }));
+    const { title, author } = state;
+    dispatch(addBook({ title, author }));
   };
 
   const handleDelete = (id) => {
@@ -33,7 +36,7 @@ const Books = () => {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} value={inputBook} type="text" />
+        <input name="title" onChange={handleChange} value={inputBook} type="text" />
         <button type="submit">Add book</button>
       </form>
     </section>
