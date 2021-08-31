@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { addBook } from '../redux/books/books';
+import store from '../redux/configureStore';
 import Book from './common/book';
 
 class Books extends Component {
@@ -23,6 +25,7 @@ class Books extends Component {
     const { inputBook, books } = this.state;
     books.push({ id: books.length + 1, title: inputBook });
     this.setState({ books });
+    store.dispatch(addBook({ title: inputBook }));
   };
 
   handleDelete = (id) => {

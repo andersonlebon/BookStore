@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { addBook } from '../redux/books/books';
-import store from '../redux/configureStore';
 
 class Header extends Component {
   constructor(props) {
@@ -10,7 +8,6 @@ class Header extends Component {
   }
 
   render() {
-    store.dispatch(addBook({ title: 'hello' }));
     return (
       <header>
         <nav>
