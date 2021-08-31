@@ -7,12 +7,9 @@ import Book from './common/book';
 const Books = () => {
   const { booksReducer: books } = useSelector((state) => state);
   const dispatch = useDispatch();
-  console.log(books);
   const [state, setState] = useState({
     inputBook: '',
   });
-  // setState({
-  // });
 
   const handleChange = ({ currentTarget }) => {
     setState({ ...state, inputBook: currentTarget.value });
