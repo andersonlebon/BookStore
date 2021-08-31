@@ -7,14 +7,14 @@ let bookId = 0;
 const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
-      const clonedState = [...state];
       bookId += 1;
+      const { title, author } = action.payload;
       const newBook = {
         id: bookId,
-        title: action.payload.title,
+        title,
+        author,
       };
-      clonedState.push(newBook);
-      return clonedState;
+      return [...state, newBook];
     }
     case REMOVE_BOOK: {
       return state.filter((book) => book.id !== action.payload.id);
