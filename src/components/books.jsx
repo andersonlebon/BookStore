@@ -1,7 +1,6 @@
-import React, { useState /* useEffect  */ } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/books';
-// import store from '../redux/configureStore';
 import Book from './common/book';
 
 const Books = () => {
