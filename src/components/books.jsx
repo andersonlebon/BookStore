@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/books';
 import Book from './common/book';
+import Input from './common/input';
 
 const Books = () => {
   const { booksReducer: books } = useSelector((state) => state);
@@ -36,18 +37,8 @@ const Books = () => {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <input
-          name="title"
-          onChange={handleChange}
-          value={title}
-          type="text"
-        />
-        <input
-          name="auther"
-          onChange={handleChange}
-          value={auther}
-          type="text"
-        />
+        <Input name="title" value={title} onChange={handleChange} />
+        <Input name="auther" value={auther} onChange={handleChange} />
         <button type="submit">Add book</button>
       </form>
     </section>
