@@ -5,6 +5,14 @@ const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'ERROR';
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
 
+export const postBook = (newBook) => {
+  axios.post(baseURL, newBook, {
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
+  });
+};
+
 const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== GET_BOOKS) return next(action);
   next(action);
