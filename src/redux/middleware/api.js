@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const GET_BOOKS = 'GET_CURRENT_BOOKS';
+const GET_BOOKS = 'GET_BOOKS';
 const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'GET_CURRENT_BOOKS_FAILURE';
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
@@ -8,25 +8,22 @@ const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/book
 const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== GET_BOOKS) return next(action);
   next(action);
-  //   const { URL, method, data } = action.payload;
+    const { URL, method, data } = action.payload;
   try {
-    // const response = await axios.get({
-    //   baseURL,
-    //   URL,
-    //   method,
-    //   data,
-    // });
-    const { data } = await axios.get(baseURL);
-
-    const arr = [];
+    const { data: books } = await axios.get({
+      baseURL,
+      URL,
+      method,
+      data,
+    });
+    const result = [];
     // eslint-disable-next-line no-restricted-syntax
-    for (const key in data) {
+    for (const key in books) {
       if (key) {
-        arr.push({ ...data[key][0], id: key });
+        result.push({ ...books[key][0], id: key });
       }
     }
-    console.log(arr);
-    return dispatch({ type: GET_BOOKS_SUCCESS, payload: arr });
+    return dispatch({ type: GET_BOOKS_SUCCESS, payload: result });
   } catch (error) {
     return dispatch({ type: GET_BOOKS_FAILURE, payload: error });
   }
