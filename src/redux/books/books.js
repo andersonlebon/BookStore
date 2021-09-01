@@ -1,17 +1,17 @@
+/* eslint-disable camelcase */
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
 export const addBook = (payload) => ({ type: ADD_BOOK, payload });
 export const removeBook = (payload) => ({ type: REMOVE_BOOK, payload });
-let bookId = 0;
 const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
-      bookId += 1;
-      const { title } = action.payload;
+      const { title, category, item_id } = action.payload;
       const newBook = {
-        id: bookId,
+        item_id,
         title,
+        category,
       };
       return [...state, newBook];
     }

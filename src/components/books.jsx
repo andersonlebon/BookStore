@@ -28,14 +28,14 @@ const Books = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { title, auther } = state;
+    const { title } = state;
     itemId += 1;
-    const book = {
+    const newBook = {
       item_id: `item${itemId}`,
-      title: 'The Great Gatsby',
+      title,
       category: 'Fiction',
     };
-    dispatch(addBook({ title, auther }));
+    dispatch(addBook(newBook));
   };
 
   const handleDelete = (id) => {
