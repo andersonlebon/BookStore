@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/books';
 import Book from './common/book';
 import Input from './common/input';
+
+let itemId = 0;
 
 const Books = () => {
   const { booksReducer: books } = useSelector((state) => state);
@@ -11,6 +13,13 @@ const Books = () => {
     title: '',
     auther: '',
   });
+
+  useEffect(() => {
+    dispatch({
+      type: 'GET_BOOKS',
+      payload: { URL: '/' },
+    });
+  }, []);
 
   const handleChange = ({ currentTarget: input }) => {
     const stateCloned = state;
@@ -21,6 +30,12 @@ const Books = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { title, auther } = state;
+    itemId += 1;
+    const book = {
+      item_id: `item${itemId}`,
+      title: 'The Great Gatsby',
+      category: 'Fiction',
+    };
     dispatch(addBook({ title, auther }));
   };
 

@@ -9,9 +9,5 @@ const reducer = combineReducers({
   booksReducer,
 });
 const store = configureStore({ reducer, middleware: [thunk, logger, api] });
-store.dispatch({
-  type: 'GET_BOOKS',
-  payload: { },
-});
 
 export default store;

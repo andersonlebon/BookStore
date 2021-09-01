@@ -2,15 +2,15 @@ import axios from 'axios';
 
 const GET_BOOKS = 'GET_BOOKS';
 const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
-const GET_BOOKS_FAILURE = 'GET_CURRENT_BOOKS_FAILURE';
+const GET_BOOKS_FAILURE = 'ERROR';
 const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
 
 const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== GET_BOOKS) return next(action);
   next(action);
-    const { URL, method, data } = action.payload;
+  const { URL, method, data } = action.payload;
   try {
-    const { data: books } = await axios.get({
+    const { data: books } = await axios.request({
       baseURL,
       URL,
       method,
