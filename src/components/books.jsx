@@ -11,7 +11,6 @@ const Books = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
-    auther: '',
   });
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const Books = () => {
     dispatch(removeBook({ id }));
   };
 
-  const { title, auther } = state;
+  const { title } = state;
   return (
     <section>
       <ul>
@@ -53,7 +52,6 @@ const Books = () => {
       </ul>
       <form onSubmit={handleSubmit}>
         <Input name="title" value={title} onChange={handleChange} />
-        <Input name="auther" value={auther} onChange={handleChange} />
         <button type="submit">Add book</button>
       </form>
     </section>
