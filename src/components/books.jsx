@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/books';
+import { postBook } from '../redux/middleware/api';
 import Book from './common/book';
 import Input from './common/input';
 
@@ -31,10 +32,13 @@ const Books = () => {
     const { title } = state;
     itemId += 1;
     const newBook = {
-      item_id: `item${itemId}`,
+      item_id: `${title + itemId}`,
       title,
       category: 'Fiction',
     };
+
+    console.log(Math.random());
+    postBook(newBook);
     dispatch(addBook(newBook));
   };
 
