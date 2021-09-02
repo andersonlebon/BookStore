@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 header {
   padding: 1rem 6.188rem;
@@ -37,11 +38,50 @@ header .user {
   grid-row: auto;
   background-color: #ffff;
   border: 1px solid #e8e8e8;
-  height: 100px;
+  height: 115px;
+  padding: 10px 20px;
 }
 
-.book-item div {
-  margin: 10px;
+.book-item .type {
+  font-size: 0.7rem;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.book-item .title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.15rem;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.book-item .auther, .book-item .book-btns button, .book-btns .book-item button {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 100;
+  font-size: 11px;
+  font-size: 0.675rem;
+  color: #0290ff;
+}
+
+.book-btns {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.book-btns button {
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid #0290ff;
+  padding: 0 10px;
+  line-height: 10px;
+}
+
+.book-btns button:first-child {
+  padding-left: 0;
+}
+
+.book-btns button:last-child {
+  border: none;
 }
 
 * {
