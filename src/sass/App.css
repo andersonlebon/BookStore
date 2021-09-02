@@ -14,6 +14,15 @@ header ul {
   gap: 25px;
 }
 
+header .user {
+  border: solid 1px #e8e8e8;
+  padding: 0.6rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: #0290ff;
+}
+
 .book-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,6 +56,9 @@ header ul {
 body {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
+  color: #121212;
+  font-weight: 300;
+  background-color: #fafafa;
 }
 
 .flex {

@@ -21,7 +21,7 @@ class Header extends Component {
               <Link to="/categories">Categories</Link>
             </li>
           </ul>
-          <div className="user l-auto">
+          <div className="user flex flex-center-all l-auto">
             <ImUser />
           </div>
         </nav>

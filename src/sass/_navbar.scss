@@ -11,4 +11,13 @@ header {
     margin: 0 20px;
     gap: 25px;
   }
+
+  .user {
+    border: solid 1px #e8e8e8;
+    padding: 0.6rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: $primary-color;
+  }
 }
