@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ImUser } from 'react-icons';
+import { ImUser } from 'react-icons/im';
 
 class Header extends Component {
   constructor(props) {

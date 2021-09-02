@@ -6,3 +6,52 @@
     margin: 10px;
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-center-all {
+  justify-content: center;
+  align-items: center;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.j-end {
+  justify-content: flex-end;
+}
+
+.j-around {
+  justify-content: space-around;
+}
+
+.al-end {
+  align-items: flex-end;
+}
+
+.al-center {
+  align-items: center;
+}
+
+.al-start {
+  align-items: flex-start;
+}
+
+.j-start {
+  align-items: flex-start;
+}
