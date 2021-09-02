@@ -16,7 +16,7 @@ const booksReducer = (state = [], action) => {
       return [...state, newBook];
     }
     case REMOVE_BOOK: {
-      return state.filter((book) => book.id !== action.payload.id);
+      return state.filter((book) => book.item_id !== action.payload.id);
     }
 
     case 'GET_CURRENT_BOOKS_SUCCESS': {

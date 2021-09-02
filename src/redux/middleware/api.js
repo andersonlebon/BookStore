@@ -16,7 +16,7 @@ export const postBook = async (newBook, dispatch) => {
 };
 
 export const deleteBook = async (id, dispatch) => {
-  const { data } = axios.delete(`${baseURL}${id}`);
+  const { data } = await axios.delete(`${baseURL}${id}`);
   if (data === 'The book was deleted successfully!') {
     dispatch(removeBook({ id }));
   }
@@ -32,7 +32,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
     // eslint-disable-next-line no-restricted-syntax
     for (const key in books) {
       if (key) {
-        result.push({ ...books[key][0], id: key });
+        result.push({ ...books[key][0], item_id: key });
       }
     }
     return dispatch({ type: GET_BOOKS_SUCCESS, payload: result });

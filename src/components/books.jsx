@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books';
-import { postBook, baseURL } from '../redux/middleware/api';
+import { postBook, baseURL, deleteBook } from '../redux/middleware/api';
 import Book from './common/book';
 import Input from './common/input';
 
@@ -42,7 +41,7 @@ const Books = () => {
   };
 
   const handleDelete = (id) => {
-    dispatch(removeBook({ id }));
+    deleteBook(id, dispatch);
   };
 
   const { title } = state;
@@ -50,7 +49,7 @@ const Books = () => {
     <section>
       <ul>
         {books.map((book) => (
-          <Book key={book.id} onDelete={handleDelete} book={book} />
+          <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
