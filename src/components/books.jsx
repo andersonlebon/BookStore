@@ -38,8 +38,7 @@ const Books = () => {
     };
 
     console.log(Math.random());
-    postBook(newBook);
-    dispatch(addBook(newBook));
+    postBook(newBook, dispatch);
   };
 
   const handleDelete = (id) => {

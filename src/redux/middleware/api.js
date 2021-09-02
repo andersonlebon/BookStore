@@ -25,14 +25,9 @@ export const deleteBook = async (id, dispatch) => {
 const api = ({ dispatch }) => (next) => async (action) => {
   if (action.type !== GET_BOOKS) return next(action);
   next(action);
-  const { URL, method, data } = action.payload;
+  const { baseURL } = action.payload;
   try {
-    const { data: books } = await axios.request({
-      baseURL,
-      URL,
-      method,
-      data,
-    });
+    const { data: books } = await axios.get(baseURL);
     const result = [];
     // eslint-disable-next-line no-restricted-syntax
     for (const key in books) {
