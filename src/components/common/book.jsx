@@ -13,8 +13,7 @@ class Book extends Component {
     return (
       <li className="book-item">
         <div>{book.title}</div>
-        <div>{book.auther}</div>
-        <button onClick={() => onDelete(book.id)} type="button">
+        <button onClick={() => onDelete(book.item_id)} type="button">
           Delete
         </button>
       </li>
@@ -24,9 +23,8 @@ class Book extends Component {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number,
+    item_id: PropTypes.string,
     title: PropTypes.string,
-    auther: PropTypes.string,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
