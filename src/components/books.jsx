@@ -47,7 +47,7 @@ const Books = () => {
   const { title } = state;
   return (
     <section>
-      <ul>
+      <ul className="flex flex-col al-center w100 books-container">
         {books.map((book) => (
           <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}

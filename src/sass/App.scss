@@ -3,17 +3,10 @@ $primary-color: #0290ff;
 $secondary-color: #121212;
 $smal-color: #292929fb;
 $background-color: #fafafa;
+$primary-bg: #ffff;
 
 @import './navbar';
-
-.book-item {
-  display: flex;
-  margin: 10px;
-
-  div {
-    margin: 10px;
-  }
-}
+@import './books';
 
 * {
   margin: 0;
