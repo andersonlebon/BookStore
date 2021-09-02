@@ -1,3 +1,15 @@
 header {
-  background-color: blue;
+  padding: 1rem 6.188rem;
+  background-color: rgb(212, 212, 51);
+
+  h1 {
+    color: #0290ff;
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+
+  ul {
+    margin: 0 20px;
+    gap: 25px;
+  }
 }
