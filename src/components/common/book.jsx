@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProgressBar from 'react-customizable-progressbar';
 import PropTypes from 'prop-types';
 
 class Book extends Component {
@@ -25,6 +26,14 @@ class Book extends Component {
           </div>
         </div>
         <div className="book-progress  flex flex-center-all">
+          <ProgressBar
+            progress={80}
+            radius={100}
+            // strokeWidth="5"
+            // trackStrokeWidth="5"
+            pointerStrokeWidth="30"
+            className="progress"
+          />
           <p>Completed</p>
         </div>
         <div className="update">

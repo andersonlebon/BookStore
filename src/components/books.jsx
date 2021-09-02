@@ -52,6 +52,7 @@ const Books = () => {
           <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
+
       <form onSubmit={handleSubmit}>
         <Input name="title" value={title} onChange={handleChange} />
         <button type="submit">Add book</button>
