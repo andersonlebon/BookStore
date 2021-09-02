@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { ImUser } from 'react-icons';
 
 class Header extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Header extends Component {
     return (
       <header>
         <nav>
+          <h1>Bookstore CMS</h1>
           <ul>
             <li>
               <Link to="/books">Link Books</Link>
@@ -19,6 +21,9 @@ class Header extends Component {
               <Link to="/categories">Categories</Link>
             </li>
           </ul>
+          <div className="user">
+            <ImUser />
+          </div>
         </nav>
       </header>
     );
