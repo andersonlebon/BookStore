@@ -19,6 +19,8 @@
 
   a,
   button {
+    color: black;
+
     &:hover {
       cursor: pointer;
     }
@@ -26,7 +28,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
 
