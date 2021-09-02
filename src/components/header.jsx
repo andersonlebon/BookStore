@@ -10,8 +10,8 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
-        <nav>
+      <header className="w100">
+        <nav className="flex w100">
           <h1>Bookstore CMS</h1>
           <ul>
             <li>
@@ -21,7 +21,7 @@ class Header extends Component {
               <Link to="/categories">Categories</Link>
             </li>
           </ul>
-          <div className="user">
+          <div className="user l-auto">
             <ImUser />
           </div>
         </nav>

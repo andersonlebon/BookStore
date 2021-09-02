@@ -1,9 +1,26 @@
+@import './navbar';
+
 .book-item {
   display: flex;
   margin: 10px;
 
   div {
     margin: 10px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+
+  a,
+  button {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -54,4 +71,25 @@
 
 .j-start {
   align-items: flex-start;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-auto {
+  margin-left: auto;
+}
+
+.r-auto {
+  margin-right: auto;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
 }
