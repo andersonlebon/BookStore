@@ -1,16 +1,25 @@
 import axios from 'axios';
+import { addBook, removeBook } from '../books/books';
 
 const GET_BOOKS = 'GET_BOOKS';
 const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'ERROR';
-const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
+export const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
 
-export const postBook = (newBook) => {
-  axios.post(baseURL, newBook, {
+export const postBook = async (newBook, dispatch) => {
+  const { data } = await axios.post(baseURL, newBook, {
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
     },
   });
+  if (data === 'Created') dispatch(addBook(newBook));
+};
+
+export const deleteBook = async (id, dispatch) => {
+  const { data } = axios.delete(`${baseURL}${id}`);
+  if (data === 'The book was deleted successfully!') {
+    dispatch(removeBook({ id }));
+  }
 };
 
 const api = ({ dispatch }) => (next) => async (action) => {

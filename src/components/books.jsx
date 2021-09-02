@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/books';
-import { postBook } from '../redux/middleware/api';
+import { postBook, baseURL } from '../redux/middleware/api';
 import Book from './common/book';
 import Input from './common/input';
 
@@ -17,7 +17,7 @@ const Books = () => {
   useEffect(() => {
     dispatch({
       type: 'GET_BOOKS',
-      payload: { URL: '/' },
+      payload: { baseURL },
     });
   }, []);
 
