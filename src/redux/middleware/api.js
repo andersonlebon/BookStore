@@ -6,6 +6,7 @@ const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'ERROR';
 export const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
 
+// eslint-disable-next-line consistent-return
 export const postBook = async (newBook, dispatch) => {
   try {
     const { data } = await axios.post(baseURL, newBook, {
