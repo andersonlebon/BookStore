@@ -18,8 +18,8 @@ This project is build with:
 
 To get the content of this project locally you need to run this command in your terminal:
 
-- `git clone https://github.com/andersonlebon/math-magicians.git`
-- `cd math-magicians`
+- `git clone https://github.com/andersonlebon/bookStore.git`
+- `cd bookStore`
 - Use `npm start` to run the app in live server
 
 ## Test
