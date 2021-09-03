@@ -13,8 +13,14 @@ header {
     gap: 25px;
   }
 
-  li:first-child a {
-    color: $primary-color;
+  li {
+    a {
+      color: #a1a1a1;
+    }
+
+    &:first-child a {
+      color: black;
+    }
   }
 
   .user {
