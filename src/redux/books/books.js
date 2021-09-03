@@ -24,10 +24,13 @@ const booksReducer = (state = [], action) => {
 
     case 'GET_CURRENT_BOOKS_SUCCESS': {
       const books = action.payload;
+      prog = 10;
       books.forEach((book) => {
-        prog += 10;
-        // eslint-disable-next-line no-param-reassign
-        book.progress = prog;
+        if (!book.progress) {
+          prog += 10;
+          // eslint-disable-next-line no-param-reassign
+          book.progress = prog;
+        }
       });
 
       return [...books];

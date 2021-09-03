@@ -16,6 +16,10 @@ header ul {
   gap: 25px;
 }
 
+header li:first-child a {
+  color: #0290ff;
+}
+
 header .user {
   border: solid 1px #e8e8e8;
   padding: 0.6rem;

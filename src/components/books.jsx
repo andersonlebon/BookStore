@@ -11,6 +11,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
+    categories: '',
   });
 
   useEffect(() => {
@@ -62,8 +63,8 @@ const Books = () => {
             placeholder="Book title"
             onChange={handleChange}
           />
-          <select name="categories" id="">
-            <option value="" selected disabled hidden>
+          <select onChange={handleChange} name="categories">
+            <option value="action" defaultValue hidden>
               Categories
             </option>
             <option value="action">Action</option>
