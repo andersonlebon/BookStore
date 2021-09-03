@@ -28,8 +28,7 @@
   .auther {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
-    font-size: 11px;
-    font-size: 0.675rem;
+    font-size: 10px;
     color: $primary-color;
   }
 }
@@ -63,10 +62,15 @@
   border-right: 1px solid #e8e8e8;
 
   p {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .prog-100 {
     font-size: 1.1rem;
   }
+}
+
+.update {
+  font-size: 10px;
+  gap: 5px;
 }

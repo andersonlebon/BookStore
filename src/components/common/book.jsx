@@ -35,7 +35,7 @@ class Book extends Component {
             <p>Completed</p>
           </div>
         </div>
-        <div className="update">
+        <div className="update flex-col flex">
           <p className="text-smal">CURRENT CHAPTER</p>
           <p>Chapter 17</p>
           <button type="button">UPDATE PROGRESS</button>
