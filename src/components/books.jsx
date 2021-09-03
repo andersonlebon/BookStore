@@ -55,10 +55,13 @@ const Books = () => {
 
       <form onSubmit={handleSubmit}>
         <h2 className="type">ADD NEW BOOK</h2>
-        <Input name="title" value={title} onChange={handleChange} />
-        <button className="blue-btn" type="submit">
-          Add book
-        </button>
+        <div className="form-control w100 flex j-between">
+          <Input name="title" value={title} onChange={handleChange} />
+          <select name="categories" id=""></select>
+          <button className="blue-btn" type="submit">
+            Add book
+          </button>
+        </div>
       </form>
     </section>
   );
