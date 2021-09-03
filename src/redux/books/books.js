@@ -22,7 +22,7 @@ const booksReducer = (state = [], action) => {
     case 'GET_CURRENT_BOOKS_SUCCESS': {
       const books = action.payload;
 
-      return [...state, ...books];
+      return [...books];
     }
 
     default:
