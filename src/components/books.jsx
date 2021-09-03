@@ -29,12 +29,12 @@ const Books = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { title } = state;
+    const { title, categories } = state;
     itemId += 1;
     const newBook = {
       item_id: `${title + itemId}`,
       title,
-      category: 'Fiction',
+      category: categories,
     };
 
     postBook(newBook, dispatch);
