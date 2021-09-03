@@ -8,6 +8,7 @@ $primary-bg: #ffff;
 
 @import './navbar';
 @import './books';
+@import './addbook';
 
 * {
   margin: 0;
@@ -24,6 +25,10 @@ $primary-bg: #ffff;
       cursor: pointer;
     }
   }
+}
+
+section {
+  padding: 2rem 6rem;
 }
 
 body {
