@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![localhost_3000_books](https://user-images.githubusercontent.com/65068771/132000196-3c14dc6f-32e1-42c9-afb5-97904db7c044.png)
+
 ## [demo](https://caleb-bookstore.herokuapp.com/books);
 
 ## Built With
