@@ -15,7 +15,7 @@ class Book extends Component {
     return (
       <li className="book-item w100 al-center">
         <div className="book-info w100 flex flex-col">
-          <p className="type">Action</p>
+          <p className="type">{book.category}</p>
           <p className="title">{book.title}</p>
           <p className="auther">Caleb buyana</p>
           <div className="book-btns flex w100 j-start">
@@ -55,6 +55,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string,
     title: PropTypes.string,
+    category: PropTypes.string,
     progress: PropTypes.number,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
