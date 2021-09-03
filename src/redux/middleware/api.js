@@ -15,7 +15,7 @@ export const postBook = async (newBook, dispatch) => {
     });
     if (data === 'Created') dispatch(addBook(newBook));
   } catch (error) {
-    console.log(error.message);
+    return dispatch({ type: GET_BOOKS_FAILURE, payload: error });
   }
 };
 
@@ -41,7 +41,6 @@ const api = ({ dispatch }) => (next) => async (action) => {
     }
     return dispatch({ type: GET_BOOKS_SUCCESS, payload: result });
   } catch (error) {
-    console.log(error);
     return dispatch({ type: GET_BOOKS_FAILURE, payload: error });
   }
 };
