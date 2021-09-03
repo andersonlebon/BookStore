@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ProgressBar from 'react-customizable-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import PropTypes from 'prop-types';
 
 class Book extends Component {
@@ -25,16 +26,14 @@ class Book extends Component {
             <button type="button"> Edite</button>
           </div>
         </div>
-        <div className="book-progress  flex flex-center-all">
-          <ProgressBar
-            progress={80}
-            radius={100}
-            // strokeWidth="5"
-            // trackStrokeWidth="5"
-            pointerStrokeWidth="30"
-            className="progress"
-          />
-          <p>Completed</p>
+        <div className="book-progress  flex al-center">
+          <div style={{ width: 50, height: 55 }}>
+            <CircularProgressbar value={66} />
+          </div>
+          <div className="prog-info flex-col flex flex-center-all">
+            <p className="prog-100">66%</p>
+            <p>Completed</p>
+          </div>
         </div>
         <div className="update">
           <p className="text-smal">CURRENT CHAPTER</p>

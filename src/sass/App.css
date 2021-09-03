@@ -84,11 +84,18 @@ header .user {
   border: none;
 }
 
-.progress {
-  width: 50px;
-  -webkit-transform: scale(0.2);
-          transform: scale(0.2);
-  background-color: blue;
+.prog-info {
+  padding: 10px;
+  padding-right: 10rem;
+  border-right: 1px solid #e8e8e8;
+}
+
+.prog-info p {
+  font-size: 12px;
+}
+
+.prog-info .prog-100 {
+  font-size: 1.1rem;
 }
 
 * {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import { postBook, baseURL, deleteBook } from '../redux/middleware/api';
+import 'react-circular-progressbar/dist/styles.css';
 import Book from './common/book';
 import Input from './common/input';
 
@@ -52,7 +54,9 @@ const Books = () => {
           <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
-
+      <div style={{ width: 30, height: 30 }}>
+        <CircularProgressbar value={66} />
+      </div>
       <form onSubmit={handleSubmit}>
         <Input name="title" value={title} onChange={handleChange} />
         <button type="submit">Add book</button>
