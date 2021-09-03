@@ -112,6 +112,19 @@ header .user {
   color: #292929fb;
 }
 
+.blue-btn {
+  background-color: #0290ff;
+  border: none;
+  padding: 0.2rem 1rem;
+  border-radius: 3px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: #e8e8e8;
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
 * {
   margin: 0;
   padding: 0;

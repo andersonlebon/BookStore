@@ -38,7 +38,9 @@ class Book extends Component {
         <div className="update flex-col flex">
           <p className="text-smal">CURRENT CHAPTER</p>
           <p>Chapter 17</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <button className="blue-btn" type="button">
+            UPDATE PROGRESS
+          </button>
         </div>
       </li>
     );
