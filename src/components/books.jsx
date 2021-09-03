@@ -11,7 +11,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
-    categories: '',
+    categories: 'Fiction',
   });
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Books = () => {
     };
 
     postBook(newBook, dispatch);
-    setState({ title: '' });
+    setState({ title: '', categories: 'Fiction' });
   };
 
   const handleDelete = (id) => {
