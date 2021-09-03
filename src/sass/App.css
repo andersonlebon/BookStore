@@ -132,6 +132,11 @@ header .user {
   text-transform: uppercase;
 }
 
+.notification {
+  font-style: italic;
+  color: #808080;
+}
+
 form {
   margin: 25px 0;
   border-top: solid 1px #e8e8e8;

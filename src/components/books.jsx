@@ -53,7 +53,7 @@ const Books = () => {
           <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
-      <p>{books.length === 0 ? 'There are not books in the store Please add a new book' : ''}</p>
+      <p className="notification">{books.length === 0 ? '...There are not books in the store Please add a new book' : ''}</p>
       <form onSubmit={handleSubmit}>
         <h2 className="type">ADD NEW BOOK</h2>
         <div className="form-control w100 flex j-between">
