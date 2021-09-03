@@ -57,7 +57,11 @@ const Books = () => {
         <h2 className="type">ADD NEW BOOK</h2>
         <div className="form-control w100 flex j-between">
           <Input name="title" value={title} onChange={handleChange} />
-          <select name="categories" id=""></select>
+          <select name="categories" id="">
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="fiction">Fiction</option>
+          </select>
           <button className="blue-btn" type="submit">
             Add book
           </button>
