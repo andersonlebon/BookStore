@@ -102,6 +102,16 @@ header .user {
   gap: 5px;
 }
 
+.update p {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+.update .text-smal {
+  color: #292929fb;
+}
+
 * {
   margin: 0;
   padding: 0;

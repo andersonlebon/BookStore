@@ -73,4 +73,14 @@
 .update {
   font-size: 10px;
   gap: 5px;
+
+  p {
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+  }
+
+  .text-smal {
+    color: $smal-color;
+  }
 }
