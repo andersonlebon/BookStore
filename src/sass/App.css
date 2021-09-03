@@ -133,10 +133,31 @@ form {
   border-top: solid 1px #e8e8e8;
 }
 
+form .form-control {
+  gap: 30px;
+}
+
 form .type {
   font-size: 1rem;
   opacity: 0.5;
   padding: 10px 0;
+}
+
+form input {
+  width: 50%;
+  height: 30px;
+  margin: 0;
+}
+
+form select {
+  width: 35%;
+  height: 30px;
+}
+
+form .blue-btn {
+  height: 30px;
+  width: 15%;
+  margin-top: 0;
 }
 
 * {

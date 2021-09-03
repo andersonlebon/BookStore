@@ -2,9 +2,30 @@ form {
   margin: 25px 0;
   border-top: solid 1px #e8e8e8;
 
+  .form-control {
+    gap: 30px;
+  }
+
   .type {
     font-size: 1rem;
     opacity: 0.5;
     padding: 10px 0;
+  }
+
+  input {
+    width: 50%;
+    height: 30px;
+    margin: 0;
+  }
+
+  select {
+    width: 35%;
+    height: 30px;
+  }
+
+  .blue-btn {
+    height: 30px;
+    width: 15%;
+    margin-top: 0;
   }
 }
