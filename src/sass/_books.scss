@@ -1,0 +1,107 @@
+.books-container {
+  gap: 0.7rem;
+}
+
+.book-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: auto;
+  background-color: $primary-bg;
+  border: 1px solid #e8e8e8;
+  height: 115px;
+  padding: 10px 20px;
+
+  .title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.15rem;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  .auther {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+    font-size: 10px;
+    color: $primary-color;
+  }
+}
+
+.type {
+  font-size: 0.7rem;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.book-btns {
+  margin: 10px 0;
+  padding: 0;
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid $primary-color;
+    padding: 0 10px;
+    line-height: 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    @extend .auther;
+  }
+}
+
+.book-progress {
+  // padding: 0 100rem;
+  margin-left: 80px;
+}
+
+.prog-info {
+  padding: 10px;
+  padding-right: 8rem;
+  border-right: 1px solid #e8e8e8;
+
+  p {
+    font-size: 10px;
+  }
+
+  .prog-100 {
+    font-size: 1.1rem;
+  }
+}
+
+.update {
+  font-size: 10px;
+  gap: 5px;
+
+  p {
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+  }
+
+  .text-smal {
+    color: $smal-color;
+  }
+}
+
+.blue-btn {
+  background-color: $primary-color;
+  border: none;
+  padding: 0.2rem 1rem;
+  border-radius: 3px;
+  align-self: flex-start;
+  color: #e8e8e8;
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.notification {
+  font-style: italic;
+  color: #808080;
+}

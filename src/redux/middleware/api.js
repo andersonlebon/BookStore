@@ -6,13 +6,18 @@ const GET_BOOKS_SUCCESS = 'GET_CURRENT_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'ERROR';
 export const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/cD1Er8iJ77cdEAvj1yxk/books/';
 
+// eslint-disable-next-line consistent-return
 export const postBook = async (newBook, dispatch) => {
-  const { data } = await axios.post(baseURL, newBook, {
-    headers: {
-      'Content-Type': 'application/json;charset=UTF-8',
-    },
-  });
-  if (data === 'Created') dispatch(addBook(newBook));
+  try {
+    const { data } = await axios.post(baseURL, newBook, {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    });
+    if (data === 'Created') dispatch(addBook(newBook));
+  } catch (error) {
+    return dispatch({ type: GET_BOOKS_FAILURE, payload: error });
+  }
 };
 
 export const deleteBook = async (id, dispatch) => {

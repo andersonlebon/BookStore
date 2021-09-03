@@ -11,6 +11,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState({
     title: '',
+    categories: 'Fiction',
   });
 
   useEffect(() => {
@@ -28,16 +29,16 @@ const Books = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { title } = state;
+    const { title, categories } = state;
     itemId += 1;
     const newBook = {
       item_id: `${title + itemId}`,
       title,
-      category: 'Fiction',
+      category: categories,
     };
 
-    console.log(Math.random());
     postBook(newBook, dispatch);
+    setState({ title: '', categories: 'Fiction' });
   };
 
   const handleDelete = (id) => {
@@ -47,14 +48,33 @@ const Books = () => {
   const { title } = state;
   return (
     <section>
-      <ul>
+      <ul className="flex flex-col al-center w100 books-container">
         {books.map((book) => (
           <Book key={book.item_id} onDelete={handleDelete} book={book} />
         ))}
       </ul>
+      <p className="notification">{books.length === 0 ? '...There are not books in the store Please add a new book' : ''}</p>
       <form onSubmit={handleSubmit}>
-        <Input name="title" value={title} onChange={handleChange} />
-        <button type="submit">Add book</button>
+        <h2 className="type">ADD NEW BOOK</h2>
+        <div className="form-control w100 flex j-between">
+          <Input
+            name="title"
+            value={title}
+            placeholder="Book title"
+            onChange={handleChange}
+          />
+          <select onChange={handleChange} name="categories">
+            <option value="action" defaultValue hidden>
+              Categories
+            </option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="fiction">Fiction</option>
+          </select>
+          <button className="blue-btn" type="submit">
+            Add book
+          </button>
+        </div>
       </form>
     </section>
   );

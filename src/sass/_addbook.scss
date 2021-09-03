@@ -1,0 +1,42 @@
+form {
+  margin: 25px 0;
+  border-top: solid 1px #e8e8e8;
+
+  .form-control {
+    gap: 30px;
+  }
+
+  .type {
+    font-size: 1rem;
+    opacity: 0.5;
+    padding: 10px 0;
+  }
+
+  .input {
+    width: 50%;
+    height: 30px;
+    margin: 0;
+    border: solid 1px #e8e8e8;
+    background-color: #fff;
+    line-height: 10px;
+    padding: 5px 10px;
+    font-size: 13px;
+
+    &::placeholder {
+      color: #c4c4c4;
+    }
+  }
+
+  select {
+    width: 35%;
+    color: #c4c4c4;
+
+    @extend .input;
+  }
+
+  .blue-btn {
+    height: 30px;
+    width: 15%;
+    margin-top: 0;
+  }
+}
