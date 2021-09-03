@@ -28,10 +28,14 @@ class Book extends Component {
         </div>
         <div className="book-progress  flex al-center">
           <div style={{ width: 50, height: 55 }}>
-            <CircularProgressbar value={66} />
+            <CircularProgressbar value={book.progress} />
           </div>
           <div className="prog-info flex-col flex flex-center-all">
-            <p className="prog-100">66%</p>
+            <p className="prog-100">
+              {book.progress}
+              {' '}
+              %
+            </p>
             <p>Completed</p>
           </div>
         </div>
@@ -51,6 +55,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string,
     title: PropTypes.string,
+    progress: PropTypes.number,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
