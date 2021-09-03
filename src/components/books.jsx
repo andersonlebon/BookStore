@@ -36,8 +36,8 @@ const Books = () => {
       category: 'Fiction',
     };
 
-    console.log(Math.random());
     postBook(newBook, dispatch);
+    setState({ title: '' });
   };
 
   const handleDelete = (id) => {
@@ -56,8 +56,16 @@ const Books = () => {
       <form onSubmit={handleSubmit}>
         <h2 className="type">ADD NEW BOOK</h2>
         <div className="form-control w100 flex j-between">
-          <Input name="title" value={title} onChange={handleChange} />
+          <Input
+            name="title"
+            value={title}
+            placeholder="Book title"
+            onChange={handleChange}
+          />
           <select name="categories" id="">
+            <option value="" selected disabled hidden>
+              Categories
+            </option>
             <option value="action">Action</option>
             <option value="comedy">Comedy</option>
             <option value="fiction">Fiction</option>

@@ -17,6 +17,15 @@ $primary-bg: #ffff;
   list-style: none;
   text-decoration: none;
 
+  input,
+  select {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   a,
   button {
     color: black;
