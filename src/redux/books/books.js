@@ -9,13 +9,14 @@ const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK: {
       const { title, category, item_id } = action.payload;
+      if (prog > 100) prog = 0;
       const newBook = {
         item_id,
         title,
         category,
         progress: prog + 15,
       };
-      prog += 7;
+      prog += 3;
       return [...state, newBook];
     }
     case REMOVE_BOOK: {
